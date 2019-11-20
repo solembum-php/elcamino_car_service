@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +12,13 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/home', function(){
+     return view('home');
+});
+Route::get('/our_works', function(){
+    echo 'You can view our works here';
+});
+Route::get('/pricelist', function(){
+    return view('pricelist');
 });
