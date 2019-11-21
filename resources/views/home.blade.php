@@ -13,10 +13,10 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #ffff99;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
+                font-weight: bold;
                 height: 100vh;
                 margin: 0;
             }
@@ -43,10 +43,29 @@
 
             .content {
                 text-align: center;
+                background-color: #339966;
+                color: #ffff66;
+                font-size: 30px;
             }
 
+            .logo{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                font-size: 25px;
+                color: #cc6699;
+                text-align: center;
+                background: #000;
+            }
+            .logo-name{
+                font-size: 30px;
+            }
+            .logo-type{
+                font-size: 18px;
+            }
             .title {
-                font-size: 84px;
+                font-size: 80px;
+                color: #4d2600;
             }
 
             .links > a {
@@ -77,9 +96,17 @@
             </div>
             @endif
 
+            <header>
+                <div class="logo">
+                    <p class="logo-type">Best</p>
+                    <p class="logo-name">El Camino</p>
+                    <p class="logo-type">Car Service</p>
+                    
+                </div>
+            </header>
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    El Camino Car Service
                 </div>
                 <p>
                     If you want to have your car painted really well, you've come to the right place!!!
