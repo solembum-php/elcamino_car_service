@@ -74,9 +74,9 @@
             <div class="content">
                 <h2>Our Services</h2>
 		<div class="service-category">
-		    <p><a href="">Painting Works</a></p>
-		    <p><a href="">Straightening</a></p>
-		    <p><a href="">Body Parts Replacement</a></p>
+		    <p><a href="{{route('car_gallery_painting')}}">Painting Works</a></p>
+		    <p><a href="{{route('car_gallery_straightening')}}">Straightening</a></p>
+		    <p><a href="{{route('car_gallery_bodyparts_replacement')}}">Body Parts Replacement</a></p>
 		</div>
 		<div>
 		    <form action="{{ route('services') }}" method="POST" class="form-horizontal">
