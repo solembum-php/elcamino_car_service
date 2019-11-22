@@ -67,6 +67,9 @@
                 font-size: 80px;
                 color: #4d2600;
             }
+            .my-links{
+                display: block;
+            }
 
             .links > a {
                 color: #636b6f;
@@ -101,7 +104,7 @@
                     <p class="logo-type">Best</p>
                     <p class="logo-name">El Camino</p>
                     <p class="logo-type">Car Service</p>
-                    
+
                 </div>
             </header>
             <div class="content">
@@ -111,8 +114,13 @@
                 <p>
                     If you want to have your car painted really well, you've come to the right place!!!
                 </p>
-                
+                <div class="my-links">
+                    <a href="{{route('home')}}">Home</a>
+                    <a href="{{route('our_works')}}">Our Works</a>
+                    <a href="{{route('pricelist')}}">Price List</a>
+                </div>
             </div>
+
         </div>
     </body>
 </html>
