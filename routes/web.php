@@ -22,3 +22,12 @@ Route::get('/services', function(){
 Route::get('/pricelist', function(){
     return view('pricelist');
 })->name('pricelist');
+Route::get('/services/car_gallery_painting', function(){
+    echo'car_gallery_painting will be here';
+})->name('car_gallery_painting');
+Route::get('/services/car_gallery_straightening', function(){
+    echo'car_gallery_straightening will be here';
+})->name('car_gallery_straightening');
+Route::get('/services/car_gallery_bodyparts_replacement', function(){
+    echo'car_gallery_bodyparts_replacement will be here';
+})->name('car_gallery_bodyparts_replacement');
