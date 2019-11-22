@@ -16,9 +16,9 @@ Route::get('/', function () {
 Route::get('/home', function(){
      return view('home');
 })->name('home');
-Route::get('/our_works', function(){
-    echo 'You can view our works here';
-})->name('our_works');
+Route::get('/services', function(){
+    return view('services');
+})->name('services');
 Route::get('/pricelist', function(){
     return view('pricelist');
 })->name('pricelist');
