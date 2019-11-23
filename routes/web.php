@@ -13,6 +13,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::auth();
 Route::get('/home', function(){
      return view('home');
 })->name('home');
@@ -31,3 +32,6 @@ Route::get('/services/car_gallery_straightening', function(){
 Route::get('/services/car_gallery_bodyparts_replacement', function(){
     echo'car_gallery_bodyparts_replacement will be here';
 })->name('car_gallery_bodyparts_replacement');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
