@@ -3,9 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Auth;
+use App\Models\Service;
 class ServiceController extends Controller
 {
+    /**
+   * Создание нового экземпляра контроллера.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +23,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $services = Service::all();
+	return view('services.index', ['services' => $services]);
     }
 
     /**
@@ -23,7 +34,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('services.create');
     }
 
     /**
@@ -34,7 +45,15 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+	    'name' => 'required|max:255',
+	]);
+
+	$request->user()->services()->create([
+	    'name' => $request->name,
+	]);
+
+	return redirect(route('services.index'));
     }
 
     /**
@@ -77,8 +96,10 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Service $services)
     {
-        //
+        $this->authorize('destroy', $services);
+	$services->delete();
+	return redirect(route('services.index'));
     }
 }
