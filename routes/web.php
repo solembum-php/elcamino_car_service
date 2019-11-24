@@ -27,8 +27,9 @@ Route::post('auth/register', 'Auth\AuthController@postRegister')->name('auth/reg
 Route::get('/services', 'ServiceController@index')->name('services.index');
 Route::get('/services/create', 'ServiceController@create')->name('services.create');
 Route::post('/services', 'ServiceController@store')->name('services.store');
-Route::delete('/service/{service}', 'ServiceController@destroy')->name('services.destroy');
-Route::get('/service/{service}/edit', 'ServiceController@edit')->name('services.edit');
+Route::delete('/services/{service}', 'ServiceController@destroy')->name('services.destroy');
+Route::get('/services/{service}/edit', 'ServiceController@edit')->name('services.edit');
+Route::put('/services/{service}', 'ServiceController@update')->name('services.update');
 
 //Route::get('/home', function(){
 //     return view('home');
