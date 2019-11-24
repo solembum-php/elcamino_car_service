@@ -24,9 +24,11 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister')->name('auth/register');
 
-Route::get('/services', 'ServiceController@index')->name('services');
-Route::post('/service', 'ServiceController@store');
-Route::delete('/service/{service}', 'ServiceController@destroy');
+Route::get('/services', 'ServiceController@index')->name('services.index');
+Route::get('/services/create', 'ServiceController@create')->name('services.create');
+Route::post('/services', 'ServiceController@store')->name('services.store');
+Route::delete('/service/{service}', 'ServiceController@destroy')->name('services.destroy');
+Route::get('/service/{service}/edit', 'ServiceController@edit')->name('services.edit');
 
 //Route::get('/home', function(){
 //     return view('home');

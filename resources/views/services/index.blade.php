@@ -18,7 +18,7 @@
 			    <form action="{{route('services.create')}}" method="post">
 				{{ csrf_field() }}
 				{{ method_field('GET') }}
-				<button><i class="fa fa-plus"></i>Create new service</button>
+				<button><i class="fa fa-plus" style="font-size: 24px;color: darkseagreen"></i> Create new service</button>
 			    </form>
 			    <table class="table table-striped task-table">
 				<!-- Заголовок таблицы -->
@@ -40,12 +40,12 @@
 					    <form action="{{route('services.destroy',$service->id)}}" method="post">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
-						<button><i class="fa fa-trash"></i></button>
+						<button><i class="fa fa-trash" style="font-size: 30px;color: lightsalmon"></i></button>
 					    </form>
-					    <form action="{{route('services.edit',$service->id)}}" method="post">
+					    <form action="{{route('services.edit',$service->id)}}" method="get">
 						{{ csrf_field() }}
 						{{ method_field('GET') }}
-						<button><i class="fa fa-edit"></i></button>
+						<button><i class="fa fa-edit" style="font-size: 30px;color: lightseagreen"></i></button>
 					    </form>
 					</td>
 				    </tr>

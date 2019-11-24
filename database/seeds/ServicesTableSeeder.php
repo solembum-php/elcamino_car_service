@@ -29,7 +29,7 @@ class ServicesTableSeeder extends Seeder
 	]);
 	DB::table('services')->insert([
 	    'name' => 'car air conditioner installation',
-	    'user_id' => 3,
+	    'user_id' => 1,
 	]);
     }
 }
