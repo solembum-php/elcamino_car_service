@@ -26,6 +26,6 @@ class ServicePolicy
      * @return type
      */
     public function destroy(User $user, Service $service) {
-	return $service->user()->first()->id == $user->id;
+	return $service->user_id == $user->id;
     }
 }

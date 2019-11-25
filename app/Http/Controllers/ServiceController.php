@@ -97,10 +97,9 @@ class ServiceController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ValidateDestroy $request, Service $services) {
-       
-        $this->authorize('destroy', $services);
-        $services->delete();
+    public function destroy(Request $request, Service $service) {
+        $this->authorize('destroy', $service);
+        $service->delete();
         return redirect(route('services.index'));
     }
 
