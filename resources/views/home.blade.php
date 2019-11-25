@@ -109,15 +109,16 @@
             </header>
             <div class="content">
                 <div class="title m-b-md">
-                    El Camino Car Service
+                    Автосервис El Camino
                 </div>
                 <p>
-                    If you want to have your car painted really well, you've come to the right place!!!
+                    Хотите, чтобы ваш автомобиль сиял? Вы пришли по нужному адресу!!!
                 </p>
                 <div class="my-links">
-                    <a href="{{route('home')}}">Home</a>
-                    <a href="{{route('services.index')}}">Services</a>
-                    <a href="{{route('pricelist')}}">Price List</a>
+                    <a href="{{route('home')}}">Домашняя</a>
+                    <a href="{{route('services.index')}}">Услуги</a>
+                    <a href="{{route('pricelist')}}">Прайслист</a>
+		    <a href="{{route('contacts')}}">Контакты</a>
                 </div>
             </div>
 

@@ -46,7 +46,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 40px;
             }
 
             .links > a {
@@ -79,9 +79,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Прайслист
                 </div>
-                <h2>Price List</h2>
                 <table>
                     <tr>
                         <th>Вид услуг</th>
