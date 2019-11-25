@@ -5,44 +5,44 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading"><b>{{trans('services.template.all_services')}}</b></div>
+                <div class="panel-heading"><b>{{trans('cars.template.all_cars')}}</b></div>
 
                 <div class="panel-body">
 		    <!-- Текущие задачи -->
-		    @if (count($services) > 0)
+		    @if (count($cars) > 0)
 		    <div class="panel panel-default">
 			<div class="panel-heading">
-			    {{trans('services.template.all_services')}}
+			    {{trans('cars.template.all_cars')}}
 			</div>
 			<div class="panel-body">
-			    <form action="{{route('services.create')}}" method="post">
+			    <form action="{{route('cars.create')}}" method="post">
 				{{ csrf_field() }}
 				{{ method_field('GET') }}
-				<button><i class="fa fa-plus" style="font-size: 24px;color: darkseagreen"></i>{{trans('services.template.create_new_service')}}</button>
+				<button><i class="fa fa-plus" style="font-size: 24px;color: darkseagreen"></i>{{trans('cars.template.create_new_car')}}</button>
 			    </form>
 			    <table class="table table-striped task-table">
 				<!-- Заголовок таблицы -->
 				<thead>
 				    <tr>
-					<th>{{trans('services.template.service')}}</th>
-					<th>{{trans('services.template.action')}}</th>
+					<th>{{trans('cars.template.car')}}</th>
+					<th>{{trans('cars.template.action')}}</th>
 				    </tr>
 				</thead>
 				<!-- Тело таблицы -->
 				<tbody>
-				    @foreach ($services as $service)
+				    @foreach ($cars as $car)
 				    <tr>
 					<!-- Имя задачи -->
 					<td class="table-text">
-					    <div><a href="{{route('carlist')}}">{{ $service->name }}</a></div>
+					    <div>{{ $car->name }}</div>
 					</td>
 					<td style="display: flex">
-					    <form action="{{route('services.destroy',$service->id)}}" method="post">
+					    <form action="{{route('cars.destroy',$car->id)}}" method="post">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
 						<button><i class="fa fa-trash" style="font-size: 30px;color: lightsalmon"></i></button>
 					    </form>
-					    <form action="{{route('services.edit',$service->id)}}" method="get">
+					    <form action="{{route('cars.edit',$car->id)}}" method="get">
 						{{ csrf_field() }}
 						{{ method_field('GET') }}
 						<button><i class="fa fa-edit" style="font-size: 30px;color: lightseagreen"></i></button>
