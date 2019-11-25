@@ -53,4 +53,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/pricelist', 'PricelistController@index')->name('pricelist');
-Route::get('/contacts', 'ContactsController@index')->name('contacts');
+
+Route::get('/cars', 'CarController@index')->name('cars.index');
+
