@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Car;
 
+
+
 class CarController extends Controller
 {
     /**
@@ -47,9 +49,10 @@ class CarController extends Controller
             'name' => 'required|max:255',
         ]);
 
-        $request->service()->cars()->create([
+        $request->user()->services()->cars()->create([
             'name' => $request->name,
         ]);
+        
 
         return redirect(route('cars.index'));
     }
