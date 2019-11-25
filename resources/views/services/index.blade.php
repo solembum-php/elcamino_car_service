@@ -34,7 +34,7 @@
 				    <tr>
 					<!-- Имя задачи -->
 					<td class="table-text">
-					    <div>{{ $service->name }}</div>
+					    <div><a href="{{route('carlist')}}">{{ $service->name }}</a></div>
 					</td>
 					<td style="display: flex">
 					    <form action="{{route('services.destroy',$service->id)}}" method="post">
