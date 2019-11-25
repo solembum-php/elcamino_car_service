@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Services</div>
+                <div class="panel-heading">{{trans('services.template.services')}}</div>
 
                 <div class="panel-body">
 		    <!-- Отображение ошибок проверки ввода -->
@@ -17,7 +17,7 @@
 
 			<!-- Имя задачи -->
 			<div class="form-group">
-			    <label for="task" class="col-sm-3 control-label">Service</label>
+			    <label for="task" class="col-sm-3 control-label">{{trans('services.template.service')}}</label>
 
 			    <div class="col-sm-6">
 				<input type="text" name="name" id="task-name" class="form-control">
@@ -28,7 +28,7 @@
 			<div class="form-group">
 			    <div class="col-sm-offset-3 col-sm-6">
 				<button type="submit" class="btn btn-default">
-				    <i class="fa fa-plus"></i> Add new service
+				    <i class="fa fa-plus"></i>{{trans('services.template.add_service')}}
 				</button>
 			    </div>
 			</div>
