@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Service;
+use App\Models\Car;
 
 class User extends Authenticatable {
 
@@ -30,6 +31,10 @@ class User extends Authenticatable {
 
     public function services() {
 	return $this->hasMany(Service::class);
+    }
+    
+    public function cars() {
+	return $this->hasMany(Car::class);
     }
 
 }

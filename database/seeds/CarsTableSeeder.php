@@ -13,23 +13,23 @@ class CarsTableSeeder extends Seeder
     {
         DB::table('cars')->insert([
 	    'name' => 'Opel Omega',
-	    'service_id' => 13,
+	    'user_id' => 1,
 	]);
 	DB::table('cars')->insert([
 	    'name' => 'Daewoo Lanos',
-	    'service_id' => 13,
+	    'user_id' => 1,
 	]);
 	DB::table('cars')->insert([
 	    'name' => 'Hundai Getz',
-	    'service_id' => 22,
+	    'user_id' => 1,
 	]);
 	DB::table('cars')->insert([
 	    'name' => 'Opel Omega',
-	    'service_id' => 22,
+	    'user_id' => 2,
 	]);
 	DB::table('cars')->insert([
 	    'name' => 'Daewoo Lanos',
-	    'service_id' => 25,
+	    'user_id' => 2,
 	]);
     }
 }

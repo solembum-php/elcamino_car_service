@@ -49,7 +49,7 @@ class CarController extends Controller
             'name' => 'required|max:255',
         ]);
 
-        $request->user()->services()->cars()->create([
+        $request->user()->cars()->create([
             'name' => $request->name,
         ]);
         
