@@ -1,21 +1,25 @@
 <?php
 
 namespace App\Providers;
+
 use App\Policies\ServicePolicy;
+use App\Policies\CarPolicy;
+use App\Models\Car;
 use App\Models\Service;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
-class AuthServiceProvider extends ServiceProvider
-{
-        /**
+class AuthServiceProvider extends ServiceProvider {
+
+    /**
      * The policy mappings for the application.
      *
      * @var array
      */
     protected $policies = [
         Post::class => PostPolicy::class,
-	Service::class => ServicePolicy::class,
+        Service::class => ServicePolicy::class,
+        Car::class => CarPolicy::class,
     ];
 
     /**
@@ -23,10 +27,10 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
+    public function boot() {
         $this->registerPolicies();
 
         //
     }
+
 }
