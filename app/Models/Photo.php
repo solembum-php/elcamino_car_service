@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 
-
-class Car extends Model
+class Photo extends Model
 {
     /**
      *
      * @var array
      */
     protected $fillable = [
-	'name', 'id',
+	'name', 'id', 'url',
     ];
 
     public function user() {

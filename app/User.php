@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Service;
 use App\Models\Car;
+use App\Models\Photo;
 
 class User extends Authenticatable {
 
@@ -37,4 +38,8 @@ class User extends Authenticatable {
 	return $this->hasMany(Car::class);
     }
 
+    public function photos() {
+	return $this->hasMany(Photo::class);
+    }
+    
 }
