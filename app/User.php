@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Service;
 use App\Models\Car;
 use App\Models\Photo;
-use App\Models\Image;
+use App\Models\Admin\Image;
 
 class User extends Authenticatable {
 

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ValidateDestroy;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Service;
+use App\Http\Controllers\Controller;
 
 class ServiceController extends Controller {
 

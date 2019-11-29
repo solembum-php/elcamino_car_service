@@ -1,24 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Car;
+use App\Http\Controllers\Controller;
 
 
 
 class CarController extends Controller
 {
-    /**
-     * Создание нового экземпляра контроллера.
-     *
-     * @return void
-     */
-    public function __construct() {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
