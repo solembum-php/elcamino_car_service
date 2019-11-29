@@ -34,7 +34,7 @@
 				    <tr>
 					<!-- Имя задачи -->
 					<td class="table-text">
-					    <div><a href="{{route('photos.index')}}">{{ $car->name }}</a></div>
+					    <div><a href="{{route('image.upload.post')}}">{{ $car->name }}</a></div>
 					</td>
 					<td style="display: flex">
 					    <form action="{{route('cars.destroy',$car->id)}}" method="post">

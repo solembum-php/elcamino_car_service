@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Service;
 use App\Models\Car;
 use App\Models\Photo;
+use App\Models\Image;
 
 class User extends Authenticatable {
 
@@ -42,4 +43,7 @@ class User extends Authenticatable {
 	return $this->hasMany(Photo::class);
     }
     
+    public function images() {
+	return $this->hasMany(Image::class);
+    }
 }

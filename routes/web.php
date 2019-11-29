@@ -62,5 +62,9 @@ Route::delete('/cars/{car}', 'CarController@destroy')->name('cars.destroy');
 Route::get('/cars/{car}/edit', 'CarController@edit')->name('cars.edit');
 Route::put('/cars/{car}', 'CarController@update')->name('cars.update');
 
-Route::get('/photos', 'PhotoController@index')->name('photos.index');
-Route::post('/photos/uploadfile', 'PhotoController@uploadfile')->name('photos.uploadfile');
+//Route::get('/photos', 'PhotoController@index')->name('photos.index');
+//Route::post('/photos/uploadfile', 'PhotoController@uploadfile')->name('photos.uploadfile');
+
+Route::get('image-upload', 'ImageUploadController@imagesUpload')->name('images.upload');
+
+Route::post('image-upload', 'ImageUploadController@imagesUploadPost')->name('images.upload.post');
