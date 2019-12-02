@@ -18,6 +18,6 @@ class ClientCarController extends Controller
      */
     public function index() {
         $cars = Car::all();
-        return view('cars.index', ['cars' => $cars]);
+        return view('client.cars.index', ['cars' => $cars]);
     }
 }
