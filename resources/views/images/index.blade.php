@@ -34,7 +34,7 @@
 				    <tr>
 					<!-- Имя задачи -->
 					<td class="table-text">
-					    <div><a href="{{route('images.index')}}">{{ $image->url }}</a></div>
+					    <div>{{ $image }}</div>
 					</td>
 					<td style="display: flex">
 					    <form action="{{route('images.destroy',$image->user_id)}}" method="post">

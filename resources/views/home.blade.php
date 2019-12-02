@@ -116,7 +116,7 @@
                 </p>
                 <div class="my-links">
                     <a href="{{route('home')}}">Домашняя</a>
-                    <a href="{{route('services.index')}}">Услуги</a>
+                    <a href="{{route('admin.services.index')}}">Услуги</a>
                     <a href="{{route('pricelist')}}">Прайслист</a>
 		    <a href="{{route('contacts')}}">Контакты</a>
                 </div>
