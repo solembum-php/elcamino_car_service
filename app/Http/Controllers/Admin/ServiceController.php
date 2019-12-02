@@ -53,7 +53,7 @@ class ServiceController extends Controller {
             'name' => $request->name,
         ]);
 
-        return redirect(route('services.index'));
+        return redirect(route('admin.services.index'));
     }
 
     /**
@@ -89,7 +89,7 @@ class ServiceController extends Controller {
         ]);
         $service->name = $request->name;
         $service->update();
-        return redirect(route('services.index'));
+        return redirect(route('admin.services.index'));
     }
 
     /**
@@ -101,7 +101,7 @@ class ServiceController extends Controller {
     public function destroy(Request $request, Service $service) {
         $this->authorize('destroy', $service);
         $service->delete();
-        return redirect(route('services.index'));
+        return redirect(route('admin.services.index'));
     }
 
 }

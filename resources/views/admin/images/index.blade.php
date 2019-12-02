@@ -15,7 +15,7 @@
 			    {{trans('images.template.all_images')}}
 			</div>
 			<div class="panel-body">
-			    <form action="{{route('images.create')}}" method="post">
+			    <form action="{{route('admin.images.create')}}" method="post">
 				{{ csrf_field() }}
 				{{ method_field('GET') }}
 				<button><i class="fa fa-plus" style="font-size: 24px;color: darkseagreen"></i>{{trans('images.template.create_new_image')}}</button>
@@ -34,15 +34,15 @@
 				    <tr>
 					<!-- Имя задачи -->
 					<td class="table-text">
-					    <div><a href="{{route('images.index')}}">{{ $image->url }}</a></div>
+					    <div><a href="{{route('admin.images.index')}}">{{ $image->url }}</a></div>
 					</td>
 					<td style="display: flex">
-					    <form action="{{route('images.destroy',$image->user_id)}}" method="post">
+					    <form action="{{route('admin.images.destroy',$image->user_id)}}" method="post">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
 						<button><i class="fa fa-trash" style="font-size: 30px;color: lightsalmon"></i></button>
 					    </form>
-					    <form action="{{route('images.edit',$image->user_id)}}" method="get">
+					    <form action="{{route('admin.images.edit',$image->user_id)}}" method="get">
 						{{ csrf_field() }}
 						{{ method_field('GET') }}
 						<button><i class="fa fa-edit" style="font-size: 30px;color: lightseagreen"></i></button>

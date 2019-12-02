@@ -5,7 +5,7 @@
     <!-- Отображение ошибок проверки ввода -->
     @include('common.errors')
     <!-- Форма новой задачи -->
-    <form action="{{ route('services.update',$service->id) }}" method="POST" class="form-horizontal">
+    <form action="{{ route('admin.services.update',$service->id) }}" method="POST" class="form-horizontal">
         {{ csrf_field() }}
 	{{ method_field('PUT') }}
         <!-- Имя задачи -->

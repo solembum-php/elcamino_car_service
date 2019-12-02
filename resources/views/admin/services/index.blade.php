@@ -15,7 +15,7 @@
 			    {{trans('services.template.all_services')}}
 			</div>
 			<div class="panel-body">
-			    <form action="{{route('services.create')}}" method="post">
+			    <form action="{{route('admin.services.create')}}" method="post">
 				{{ csrf_field() }}
 				{{ method_field('GET') }}
 				<button><i class="fa fa-plus" style="font-size: 24px;color: darkseagreen"></i>{{trans('services.template.create_new_service')}}</button>
@@ -34,15 +34,15 @@
 				    <tr>
 					<!-- Имя задачи -->
 					<td class="table-text">
-					    <div><a href="{{route('cars.index')}}">{{ $service->name }}</a></div>
+					    <div><a href="{{route('admin.cars.index')}}">{{ $service->name }}</a></div>
 					</td>
 					<td style="display: flex">
-					    <form action="{{route('services.destroy',$service->id)}}" method="post">
+					    <form action="{{route('admin.services.destroy',$service->id)}}" method="post">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
 						<button><i class="fa fa-trash" style="font-size: 30px;color: lightsalmon"></i></button>
 					    </form>
-					    <form action="{{route('services.edit',$service->id)}}" method="get">
+					    <form action="{{route('admin.services.edit',$service->id)}}" method="get">
 						{{ csrf_field() }}
 						{{ method_field('GET') }}
 						<button><i class="fa fa-edit" style="font-size: 30px;color: lightseagreen"></i></button>

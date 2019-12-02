@@ -12,7 +12,7 @@
 		    @include('common.errors')
 
 		    <!-- Форма новой задачи -->
-		    <form action="{{ route('cars.store') }}" method="POST" class="form-horizontal">
+		    <form action="{{ route('admin.cars.store') }}" method="POST" class="form-horizontal">
 			{{ csrf_field() }}
 
 			<!-- Имя задачи -->

@@ -17,20 +17,27 @@ Route::get('/', function () {
 Route::auth();
 
 Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
-    Route::resource('images', 'ImageController');
-    Route::resource('cars', 'CarController');
-    Route::resource('services', 'ServiceController');
+    Route::resource('images', 'ImageController', [
+	'as' => 'admin',
+    ]);
+    Route::resource('cars', 'CarController', [
+	'as' => 'admin',
+    ]);
+    Route::resource('services', 'ServiceController', [
+	'as' => 'admin',
+    ]);
 });
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/pricelist', 'PricelistController@index')->name('pricelist');
 Route::get('/contacts', 'ContactsController@index')->name('contacts');
 
 Route::group(['namespace' => 'Client', 'prefix' => 'client'], function() {
-    
+
     Route::resource('services', 'ClientServiceController');
     Route::resource('cars', 'ClientCarController');
     Route::resource('images', 'ClientImageController');
+    Route::resource('home', 'ClientHomeController');
 });
 

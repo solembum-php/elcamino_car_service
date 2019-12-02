@@ -46,7 +46,7 @@ class CarController extends Controller
         ]);
         
 
-        return redirect(route('cars.index'));
+        return redirect(route('admin.cars.index'));
     }
 
     /**
@@ -82,7 +82,7 @@ class CarController extends Controller
         ]);
         $car->name = $request->name;
         $car->update();
-        return redirect(route('cars.index'));
+        return redirect(route('admin.cars.index'));
     }
 
     /**
@@ -94,7 +94,7 @@ class CarController extends Controller
     public function destroy(Request $request, Car $car) {
         $this->authorize('destroy', $car);
         $car->delete();
-        return redirect(route('cars.index'));
+        return redirect(route('admin.cars.index'));
     }
     
 }

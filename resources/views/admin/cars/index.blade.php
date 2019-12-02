@@ -15,7 +15,7 @@
 			    {{trans('cars.template.all_cars')}}
 			</div>
 			<div class="panel-body">
-			    <form action="{{route('cars.create')}}" method="post">
+			    <form action="{{route('admin.cars.create')}}" method="post">
 				{{ csrf_field() }}
 				{{ method_field('GET') }}
 				<button><i class="fa fa-plus" style="font-size: 24px;color: darkseagreen"></i>{{trans('cars.template.create_new_car')}}</button>
@@ -34,15 +34,15 @@
 				    <tr>
 					<!-- Имя задачи -->
 					<td class="table-text">
-					    <div><a href="{{route('images.index')}}">{{ $car->name }}</a></div>
+					    <div><a href="{{route('admin.images.index')}}">{{ $car->name }}</a></div>
 					</td>
 					<td style="display: flex">
-					    <form action="{{route('cars.destroy',$car->id)}}" method="post">
+					    <form action="{{route('admin.cars.destroy',$car->id)}}" method="post">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
 						<button><i class="fa fa-trash" style="font-size: 30px;color: lightsalmon"></i></button>
 					    </form>
-					    <form action="{{route('cars.edit',$car->id)}}" method="get">
+					    <form action="{{route('admin.cars.edit',$car->id)}}" method="get">
 						{{ csrf_field() }}
 						{{ method_field('GET') }}
 						<button><i class="fa fa-edit" style="font-size: 30px;color: lightseagreen"></i></button>

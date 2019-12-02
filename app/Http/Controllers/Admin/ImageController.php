@@ -52,7 +52,7 @@ class ImageController extends Controller {
 	request()->image->move(public_path('images'), $fileName);
 	$url = asset('images/' . $fileName);
 	Image::create(['url'=>$url,'user_id'=>$request->user()->id]);
-	return redirect(route('images.index'));
+	return redirect(route('admin.images.index'));
     }
     
     /**
@@ -64,7 +64,7 @@ class ImageController extends Controller {
     public function destroy(Request $request, Image $image) {
         $this->authorize('destroy', $image);
         $image->delete();
-        return redirect(route('images.index'));
+        return redirect(route('admin.images.index'));
     }
 
     /**
@@ -74,7 +74,7 @@ class ImageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit(Image $image) {
-        return view('images.edit', ['image' => $image]);
+        return view('admin.images.edit', ['image' => $image]);
     }
         /**
      * Update the specified resource in storage.
@@ -87,6 +87,6 @@ class ImageController extends Controller {
         
         $image->url = $request->url;
         $image->update();
-        return redirect(route('images.index'));
+        return redirect(route('admin.images.index'));
     }
 }
