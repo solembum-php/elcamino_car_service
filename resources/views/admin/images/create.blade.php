@@ -12,27 +12,18 @@
 		    @include('common.errors')
 
 		    <!-- Форма новой задачи -->
-		    <form action="{{ route('images.store') }}" method="POST" class="form-horizontal">
+		    <form action="{{ route('images.store') }}" method="POST" enctype="multipart/form-data">
 			{{ csrf_field() }}
-
-			<!-- Имя задачи -->
-			<div class="form-group">
-			    <label for="task" class="col-sm-3 control-label">{{trans('images.template.image')}}</label>
-
-			    <div class="col-sm-6">
-				<input type="text" name="name" id="task-name" class="form-control">
+			<div class="row">
+			    <div class="col-md-6">
+				<input type="file" name="image" class="form-control">
 			    </div>
-			</div>
-
-			<!-- Кнопка добавления задачи -->
-			<div class="form-group">
-			    <div class="col-sm-offset-3 col-sm-6">
-				<button type="submit" class="btn btn-default">
-				    <i class="fa fa-plus"></i>{{trans('images.template.add_image')}}
-				</button>
+			    <div class="col-md-6">
+				<button type="submit" class="btn btn-success">Upload</button>
 			    </div>
 			</div>
 		    </form>
+		    
                 </div>
             </div>
         </div>

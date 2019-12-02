@@ -24,7 +24,7 @@ class ImageController extends Controller {
     public function index() {
 	//return view('admin.images.index');
 	$images = Image::all();
-	return view('admin.images.index', ['images' => $images]);
+	return view('images.index', ['images' => $images]);
     }
     
     /**
@@ -33,7 +33,7 @@ class ImageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view('admin.images.create');
+        return view('images.create');
     }
 
     /**
@@ -85,6 +85,9 @@ class ImageController extends Controller {
      */
     public function update(Request $request, Image $image) {
         
+	$this->validate($request, [
+            'url' => 'required|max:255',
+        ]);
         $image->url = $request->url;
         $image->update();
         return redirect(route('images.index'));

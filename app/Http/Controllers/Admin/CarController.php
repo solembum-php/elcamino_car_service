@@ -18,7 +18,7 @@ class CarController extends Controller
      */
     public function index() {
         $cars = Car::all();
-        return view('cars.index', ['cars' => $cars]);
+        return view('admin.cars.index', ['cars' => $cars]);
     }
 
     /**
@@ -27,7 +27,7 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view('cars.create');
+        return view('admin.cars.create');
     }
 
     /**
@@ -66,7 +66,7 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Car $car) {
-        return view('cars.edit', ['car' => $car]);
+        return view('admin.cars.edit', ['car' => $car]);
     }
 
     /**

@@ -26,7 +26,7 @@ class ServiceController extends Controller {
      */
     public function index() {
         $services = Service::all();
-        return view('services.index', ['services' => $services]);
+        return view('admin.services.index', ['services' => $services]);
     }
 
     /**
@@ -35,7 +35,7 @@ class ServiceController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view('services.create');
+        return view('admin.services.create');
     }
 
     /**
@@ -73,7 +73,7 @@ class ServiceController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit(Service $service) {
-        return view('services.edit', ['service' => $service]);
+        return view('admin.services.edit', ['service' => $service]);
     }
 
     /**

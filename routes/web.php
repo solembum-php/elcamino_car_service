@@ -30,5 +30,7 @@ Route::get('/contacts', 'ContactsController@index')->name('contacts');
 //Route::group(['namespace' => 'Client', 'prefix' => 'client'], function() {
 //    
 //    Route::resource('services', 'ClientServiceController');
+//    Route::resource('cars', 'ClientCarController');
+//    Route::resource('images', 'ClientImageController');
 //});
 
