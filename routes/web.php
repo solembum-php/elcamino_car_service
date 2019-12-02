@@ -27,8 +27,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/pricelist', 'PricelistController@index')->name('pricelist');
 Route::get('/contacts', 'ContactsController@index')->name('contacts');
 
-
-
-//Route::get('/photos', 'PhotoController@index')->name('photos.index');
-//Route::post('/photos/uploadfile', 'PhotoController@uploadfile')->name('photos.uploadfile');
+//Route::group(['namespace' => 'Client', 'prefix' => 'client'], function() {
+//    
+//    Route::resource('services', 'ClientServiceController');
+//});
 

@@ -20,7 +20,7 @@ class AuthServiceProvider extends ServiceProvider {
         Post::class => PostPolicy::class,
         Service::class => ServicePolicy::class,
         Car::class => CarPolicy::class,
-	Image::class => ImagePolicy::class,
+        Image::class => ImagePolicy::class,
     ];
 
     /**
