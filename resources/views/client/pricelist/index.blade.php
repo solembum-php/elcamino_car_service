@@ -42,8 +42,8 @@
             }
 
             .content {
-                text-align: center;
                 color: #000;
+		text-align: center;
             }
 
             .title {
@@ -69,6 +69,9 @@
 	    h2{
 		color: #e65c00;
 	    }
+	    table{
+		text-align: left;
+	    }
 	    th{
 		color: #339966;
 	    }
@@ -77,7 +80,7 @@
     </head>
     <body>
         <div class="content"> 
-	    <a href="{{ route('home.index') }}">Home</a>
+	    <a id="homelink" href="{{ route('home.index') }}">Home</a>
             <h2>Прайслист</h2>
             <table class="price-table">
                 <tr>
@@ -95,6 +98,10 @@
 		<tr>
                     <td>Покраска крыши</td>
                     <td>1500</td>
+                </tr>
+		<tr>
+                    <td>Рихтовка</td>
+                    <td>500</td>
                 </tr>
             </table>
         </div>
