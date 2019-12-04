@@ -37,7 +37,7 @@
 					    <div><a href="{{route('admin.images.index')}}">{{ $image->url }}</a></div>
 					</td>
 					<td style="display: flex">
-					    <form action="{{route('admin.images.destroy',$image->user_id)}}" method="post">
+					    <form action="{{route('admin.images.destroy',$image->id)}}" method="post">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
 						<button><i class="fa fa-trash" style="font-size: 30px;color: lightsalmon"></i></button>
