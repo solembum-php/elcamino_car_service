@@ -16,7 +16,7 @@
                 background-color: #fff;
                 color: #000;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
+                font-weight: bold;
                 height: 100vh;
                 margin: 0;
             }
@@ -51,7 +51,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #000;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -66,14 +66,18 @@
             .contact-info{
                 color: #006666;
             }
-	    td>tr{
-		color: #000;
+	    h2{
+		color: #e65c00;
+	    }
+	    th{
+		color: #339966;
 	    }
 	    
         </style>
     </head>
     <body>
-        <div class="content">   
+        <div class="content"> 
+	    <a href="{{ route('home.index') }}">Home</a>
             <h2>Прайслист</h2>
             <table class="price-table">
                 <tr>

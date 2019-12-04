@@ -16,7 +16,7 @@
                 background-color: #fff;
                 color: #000;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
+                font-weight: bold;
                 height: 100vh;
                 margin: 0;
             }
@@ -51,7 +51,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #000;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -63,6 +63,9 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+	    h2{
+		color: #339933;
+	    }
 	    .contact-info{
 		color: #006666;
 	    }
@@ -71,12 +74,13 @@
     <body>
 
             <div class="content">
+		<a href="{{ route('home.index') }}">Home</a>
                 <h2>
                     Наши Контакты
                 </h2>
 
 		<div class="contact-info">
-		<p>address: Str., Dnipro</p>
+		<address>address: Vysokovoltnaya Str., Dnipro</address>
 		<p>phone: +380505555555</p>
 		<p>e-mail: poi@gmail.com</p>
 		</div>
