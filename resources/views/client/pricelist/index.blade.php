@@ -14,7 +14,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: #000;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -43,6 +43,7 @@
 
             .content {
                 text-align: center;
+                color: #000;
             }
 
             .title {
@@ -62,39 +63,29 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .contact-info{
+                color: #006666;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                <a href="{{ url('/home') }}">Home</a>
-                @else
-                <a href="{{ route('login') }}">Login</a>
-                <a href="{{ route('register') }}">Register</a>
-                @endauth
-            </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Прайслист
-                </div>
-                <table>
-                    <tr>
-                        <th>Вид услуг</th>
-                        <th>Стоимость, грн.</th>
-                    </tr>
-                    <tr>
-                        <td>Покраска капота</td>
-                        <td>1000</td>
-                    </tr>
-                </table>
-                
-            </div>
+        <div class="content">   
+            <h2>Прайслист</h2>
+            <table>
+                <tr>
+                    <th>Вид услуг</th>
+                    <th>Стоимость, грн.</th>
+                </tr>
+                <tr>
+                    <td>Покраска капота</td>
+                    <td>1000</td>
+                </tr>
+            </table>
         </div>
-    </body>
+</body>
 </html>
+
+
+
 
 

@@ -106,8 +106,8 @@
                 <div class="my-links">
                     <a href="{{route('home.index')}}">Домашняя</a>
                     <a href="{{route('services.index')}}">Услуги</a>
-                    <a href="{{route('pricelist')}}">Прайслист</a>
-		    <a href="{{route('contacts')}}">Контакты</a>
+                    <a href="{{route('pricelist.index')}}">Прайслист</a>
+                    <a href="{{route('contacts.index')}}">Контакты</a>
                 </div>
             </div>
 
