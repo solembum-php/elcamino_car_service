@@ -66,12 +66,16 @@
             .contact-info{
                 color: #006666;
             }
+	    td>tr{
+		color: #000;
+	    }
+	    
         </style>
     </head>
     <body>
         <div class="content">   
             <h2>Прайслист</h2>
-            <table>
+            <table class="price-table">
                 <tr>
                     <th>Вид услуг</th>
                     <th>Стоимость, грн.</th>
@@ -80,9 +84,17 @@
                     <td>Покраска капота</td>
                     <td>1000</td>
                 </tr>
+		<tr>
+                    <td>Полировка кузова</td>
+                    <td>2500</td>
+                </tr>
+		<tr>
+                    <td>Покраска крыши</td>
+                    <td>1500</td>
+                </tr>
             </table>
         </div>
-</body>
+    </body>
 </html>
 
 
