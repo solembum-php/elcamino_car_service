@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Service;
 class AuthController extends Controller
 {
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/services';
     
     public function authorize() {
     if(Auth::user()->role_id == 1) {
