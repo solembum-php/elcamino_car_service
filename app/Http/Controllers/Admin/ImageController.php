@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Image;
 use App\Http\Controllers\Controller;
 
@@ -62,7 +63,8 @@ class ImageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, Image $image) {
-        $this->authorize('destroy', $image);
+       
+	$this->authorize('destroy', $image);
         $image->delete();
         return redirect(route('admin.images.index'));
     }

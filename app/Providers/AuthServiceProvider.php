@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\Policies\ServicePolicy;
 use App\Policies\CarPolicy;
+use App\Policies\ImagePolicy;
 use App\Models\Car;
 use App\Models\Service;
+use App\Models\Image;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
