@@ -42,11 +42,6 @@
 						{{ method_field('DELETE') }}
 						<button><i class="fa fa-trash" style="font-size: 30px;color: lightsalmon"></i></button>
 					    </form>
-					    <form action="{{route('admin.images.edit',$image->user_id)}}" method="get">
-						{{ csrf_field() }}
-						{{ method_field('GET') }}
-						<button><i class="fa fa-edit" style="font-size: 30px;color: lightseagreen"></i></button>
-					    </form>
 					</td>
 				    </tr>
 				    @endforeach

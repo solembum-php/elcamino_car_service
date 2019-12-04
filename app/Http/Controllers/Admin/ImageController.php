@@ -68,27 +68,4 @@ class ImageController extends Controller {
         $image->delete();
         return redirect(route('admin.images.index'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Image $image) {
-        return view('admin.images.edit', ['image' => $image]);
-    }
-        /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Image $image) {
-        
-        $image->url = $request->url;
-        $image->update();
-        return redirect(route('admin.images.index'));
-    }
 }
