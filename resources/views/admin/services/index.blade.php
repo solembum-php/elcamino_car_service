@@ -5,6 +5,8 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
+                <p><a href="{{ route('admin.cars.index') }}">To Cars</a></p>
+                <p><a href="{{ route('admin.images.index') }}">To Images</a></p>
                 <div class="panel-heading"><b>{{trans('services.template.all_services')}}</b></div>
 
                 <div class="panel-body">

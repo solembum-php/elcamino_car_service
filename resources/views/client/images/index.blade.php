@@ -8,35 +8,36 @@
                 <div class="panel-heading"><b>{{trans('images.template.all_images')}}</b></div>
 
                 <div class="panel-body">
-		    <!-- Текущие задачи -->
-		    @if (count($images) > 0)
-		    <div class="panel panel-default">
-			<div class="panel-heading">
-			    {{trans('images.template.all_images')}}
-			</div>
-			<div class="panel-body">
-			    <table class="table table-striped task-table">
-				<!-- Заголовок таблицы -->
-				<thead>
-				    <tr>
-					<th>{{trans('images.template.image')}}</th>
-				    </tr>
-				</thead>
-				<!-- Тело таблицы -->
-				<tbody>
-				    @foreach ($images as $image)
-				    <tr>
-					<!-- Имя задачи -->
-					<td class="table-text">
-					    <div><img src="{{ $image->url }}"  height="150"/></div>
-					</td>
-				    </tr>
-				    @endforeach
-				</tbody>
-			    </table>
-			</div>
-		    </div>
-		    @endif
+                    <!-- Текущие задачи -->
+                    @if (count($images) > 0)
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            {{trans('images.template.all_images')}}
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped task-table">
+                                <!-- Заголовок таблицы -->
+                                <thead>
+                                    <tr>
+                                        <th>{{trans('images.template.image')}}</th>
+                                    </tr>
+                                </thead>
+                                <!-- Тело таблицы -->
+                                <tbody>
+                                    @foreach ($images as $image)
+                                    <tr>
+                                        <!-- Имя задачи -->
+                                        <td class="table-text">
+                                            <div><img src="{{ $image->url }}"  height="150"/></div>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <a href="{{ route('home.index') }}"><b>Home</b></a>
+                        </div>
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>
