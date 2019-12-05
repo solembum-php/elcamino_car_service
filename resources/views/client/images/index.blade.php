@@ -28,7 +28,7 @@
 				    <tr>
 					<!-- Имя задачи -->
 					<td class="table-text">
-					    <div><img src="{{ $image->url }}"/></div>
+					    <div><img src="{{ $image->url }}"  height="150"/></div>
 					</td>
 				    </tr>
 				    @endforeach
