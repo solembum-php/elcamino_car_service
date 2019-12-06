@@ -6,10 +6,8 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading"><b>{{trans('services.template.all_services')}}</b></div>
-
                 <div class="panel-body">
 		    <!-- Текущие задачи -->
-		    @if (count($services) > 0)
 		    <div class="panel panel-default">
 			<div class="panel-heading">
 			    {{trans('services.template.all_services')}}
@@ -20,6 +18,7 @@
 				{{ method_field('GET') }}
 				<button><i class="fa fa-plus" style="font-size: 24px;color: darkseagreen"></i>{{trans('services.template.create_new_service')}}</button>
 			    </form>
+			    @if (count($services) > 0)
 			    <table class="table table-striped task-table">
 				<!-- Заголовок таблицы -->
 				<thead>
@@ -52,9 +51,9 @@
 				    @endforeach
 				</tbody>
 			    </table>
+			    @endif
 			</div>
 		    </div>
-		    @endif
                 </div>
             </div>
         </div>

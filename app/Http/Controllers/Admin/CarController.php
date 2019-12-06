@@ -6,19 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Car;
 use App\Http\Controllers\Controller;
+use App\Models\Service;
 
+class CarController extends Controller {
 
-
-class CarController extends Controller
-{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $cars = Car::all();
-        return view('admin.cars.index', ['cars' => $cars]);
+	$cars = Car::all();
+	return view('admin.cars.index', ['cars' => $cars]);
     }
 
     /**
@@ -27,7 +26,11 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view('admin.cars.create');
+	$services = Service::all();
+	if ($services->count() == 0) {
+	    return redirect()->route('admin.services.index');
+	}
+	return view('admin.cars.create', ['services' => $services]);
     }
 
     /**
@@ -37,16 +40,18 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        $this->validate($request, [
-            'name' => 'required|max:255',
-        ]);
+	$this->validate($request, [
+	    'name' => 'required|max:255',
+	    'service_id' => 'required',
+	]);
 
-        $request->user()->cars()->create([
-            'name' => $request->name,
-        ]);
-        
+	Car::create([
+	    'name' => $request->name,
+	    'service_id' => $request->service_id,
+	]);
 
-        return redirect(route('admin.cars.index'));
+
+	return redirect(route('admin.cars.index'));
     }
 
     /**
@@ -56,7 +61,7 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        //
+	//
     }
 
     /**
@@ -66,7 +71,7 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Car $car) {
-        return view('admin.cars.edit', ['car' => $car]);
+	return view('admin.cars.edit', ['car' => $car]);
     }
 
     /**
@@ -77,12 +82,12 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Car $car) {
-        $this->validate($request, [
-            'name' => 'required|max:255',
-        ]);
-        $car->name = $request->name;
-        $car->update();
-        return redirect(route('admin.cars.index'));
+	$this->validate($request, [
+	    'name' => 'required|max:255',
+	]);
+	$car->name = $request->name;
+	$car->update();
+	return redirect(route('admin.cars.index'));
     }
 
     /**
@@ -92,9 +97,9 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, Car $car) {
-        $this->authorize('destroy', $car);
-        $car->delete();
-        return redirect(route('admin.cars.index'));
+	$this->authorize('destroy', $car);
+	$car->delete();
+	return redirect(route('admin.cars.index'));
     }
-    
+
 }

@@ -16,6 +16,13 @@ class CreateImagesTable extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
             $table->string('url');
+	    $table->integer('car_id')
+		    ->unsigned()
+		    ->index();
+	    $table->foreign('car_id')
+		    ->references('id')
+		    ->on('cars')
+		    ->onDelete('restrict');
             $table->timestamps();
         });
     }

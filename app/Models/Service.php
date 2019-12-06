@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\User;
+use App\Models\Car;
 
 class Service extends Model {
 
@@ -15,8 +15,8 @@ class Service extends Model {
 	'name', 'id',
     ];
 
-    public function user() {
-	return $this->belongsTo(User::class);
+    public function car() {
+	return $this->hasMany(Car::class);
     }
     
 }

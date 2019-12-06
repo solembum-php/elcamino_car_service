@@ -6,10 +6,8 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading"><b>{{trans('cars.template.all_cars')}}</b></div>
-
                 <div class="panel-body">
 		    <!-- Текущие задачи -->
-		    @if (count($cars) > 0)
 		    <div class="panel panel-default">
 			<div class="panel-heading">
 			    {{trans('cars.template.all_cars')}}
@@ -20,11 +18,13 @@
 				{{ method_field('GET') }}
 				<button><i class="fa fa-plus" style="font-size: 24px;color: darkseagreen"></i>{{trans('cars.template.create_new_car')}}</button>
 			    </form>
+			    @if (count($cars) > 0)
 			    <table class="table table-striped task-table">
 				<!-- Заголовок таблицы -->
 				<thead>
 				    <tr>
 					<th>{{trans('cars.template.car')}}</th>
+					<th>{{trans('cars.template.service_id')}}</th>
 					<th>{{trans('cars.template.action')}}</th>
 				    </tr>
 				</thead>
@@ -34,7 +34,10 @@
 				    <tr>
 					<!-- Имя задачи -->
 					<td class="table-text">
-					    <div><a href="{{route('admin.images.index')}}">{{ $car->name }}</a></div>
+					    {{ $car->name }}
+					</td>
+					<td class="table-text">
+					    {{ $car->service->name }}
 					</td>
 					<td style="display: flex">
 					    <form action="{{route('admin.cars.destroy',$car->id)}}" method="post">
@@ -52,9 +55,9 @@
 				    @endforeach
 				</tbody>
 			    </table>
+			    @endif
 			</div>
 		    </div>
-		    @endif
                 </div>
             </div>
         </div>

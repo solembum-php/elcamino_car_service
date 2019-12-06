@@ -18,6 +18,16 @@
 			    <div class="col-md-6">
 				<input type="file" name="image" class="form-control">
 			    </div>
+			    <label for="service" class="col-sm-3 control-label">{{trans('cars.template.car')}}</label>
+			<div class="form-group">
+			    <div class="col-sm-6">
+				<select name="car_id" id="car" class="form-control">
+				    @foreach ($cars as $car)
+				    <option value="{{$car->id}}">{{$car->name}}</option>
+				    @endforeach
+				</select>
+			    </div>
+			</div>
 			    <div class="col-md-6">
 				<button type="submit" class="btn btn-success">Upload</button>
 			    </div>

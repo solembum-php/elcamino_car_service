@@ -16,7 +16,7 @@ class ServiceController extends Controller {
      * @return void
      */
     public function __construct() {
-        $this->middleware('auth');
+	$this->middleware('auth');
     }
 
     /**
@@ -25,8 +25,8 @@ class ServiceController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $services = Service::all();
-        return view('admin.services.index', ['services' => $services]);
+	$services = Service::all();
+	return view('admin.services.index', ['services' => $services]);
     }
 
     /**
@@ -35,7 +35,7 @@ class ServiceController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view('admin.services.create');
+	return view('admin.services.create');
     }
 
     /**
@@ -45,15 +45,15 @@ class ServiceController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        $this->validate($request, [
-            'name' => 'required|max:255',
-        ]);
+	$this->validate($request, [
+	    'name' => 'required|max:255',
+	]);
 
-        $request->user()->services()->create([
-            'name' => $request->name,
-        ]);
+	Service::create([
+	    'name' => $request->name,
+	]);
 
-        return redirect(route('admin.services.index'));
+	return redirect(route('admin.services.index'));
     }
 
     /**
@@ -63,7 +63,7 @@ class ServiceController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        //
+	//
     }
 
     /**
@@ -73,7 +73,7 @@ class ServiceController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit(Service $service) {
-        return view('admin.services.edit', ['service' => $service]);
+	return view('admin.services.edit', ['service' => $service]);
     }
 
     /**
@@ -84,12 +84,12 @@ class ServiceController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Service $service) {
-        $this->validate($request, [
-            'name' => 'required|max:255',
-        ]);
-        $service->name = $request->name;
-        $service->update();
-        return redirect(route('admin.services.index'));
+	$this->validate($request, [
+	    'name' => 'required|max:255',
+	]);
+	$service->name = $request->name;
+	$service->update();
+	return redirect(route('admin.services.index'));
     }
 
     /**
@@ -99,9 +99,8 @@ class ServiceController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, Service $service) {
-        $this->authorize('destroy', $service);
-        $service->delete();
-        return redirect(route('admin.services.index'));
+	$service->delete();
+	return redirect(route('admin.services.index'));
     }
 
 }

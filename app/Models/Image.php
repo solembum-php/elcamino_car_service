@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\User;
+use App\Models\Car;
 
 class Image extends Model {
 
@@ -12,11 +12,11 @@ class Image extends Model {
      * @var array
      */
     protected $fillable = [
-	'url', 'user_id', 'id',
+	'url', 'id',
     ];
 
-    public function user() {
-	return $this->belongsTo(User::class);
+    public function car() {
+	return $this->belongsTo(Car::class);
     }
 
 }

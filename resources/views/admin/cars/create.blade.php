@@ -17,10 +17,19 @@
 
 			<!-- Имя задачи -->
 			<div class="form-group">
-			    <label for="task" class="col-sm-3 control-label">{{trans('cars.template.car')}}</label>
-
+			    <label for="name" class="col-sm-3 control-label">{{trans('cars.template.car')}}</label>
 			    <div class="col-sm-6">
-				<input type="text" name="name" id="task-name" class="form-control">
+				<input type="text" id="name" name="name" class="form-control">
+			    </div>
+			</div>
+			<label for="service" class="col-sm-3 control-label">{{trans('services.template.service')}}</label>
+			<div class="form-group">
+			    <div class="col-sm-6">
+				<select name="service_id" id="service" class="form-control">
+				    @foreach ($services as $service)
+				    <option value="{{$service->id}}">{{$service->name}}</option>
+				    @endforeach
+				</select>
 			    </div>
 			</div>
 

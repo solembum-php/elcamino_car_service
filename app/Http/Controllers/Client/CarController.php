@@ -3,19 +3,21 @@
 namespace App\Http\Controllers\Client;
 
 use Illuminate\Http\Request;
-use App\Models\Service;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Car;
 use App\Http\Controllers\Controller;
 
-class ClientServiceController extends Controller {
 
+
+class CarController extends Controller
+{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $services = Service::all();
-        return view('client.services.index', ['services' => $services]);
+        $cars = Car::all();
+        return view('client.cars.index', ['cars' => $cars]);
     }
-
 }

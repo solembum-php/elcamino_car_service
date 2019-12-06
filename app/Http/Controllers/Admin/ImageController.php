@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Image;
+use App\Models\Service;
+use App\Models\Car;
 use App\Http\Controllers\Controller;
 
 class ImageController extends Controller {
@@ -34,7 +36,12 @@ class ImageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
+	$cars = Car::all();
+	if ($cars->count() == 0) {
+	    return redirect()->route('admin.cars.index');
+	}
         return view('admin.images.create');
+	return view('admin.images.create', ['services' => $services]);
     }
 
     /**

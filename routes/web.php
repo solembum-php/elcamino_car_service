@@ -30,13 +30,12 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
 });
 
 
-Route::group(['namespace' => 'Client', 'prefix' => 'client'], function() {
-
-    Route::resource('services', 'ClientServiceController');
-    Route::resource('cars', 'ClientCarController');
-    Route::resource('images', 'ClientImageController');
-    Route::resource('home', 'ClientHomeController');
-    Route::resource('contacts', 'ClientContactsController');
-    Route::resource('pricelist', 'ClientPricelistController');
+Route::group(['namespace' => 'Client'], function() {
+    Route::get('/', 'HomeController@index')->name('home.index');
+    Route::get('services', 'ServiceController@index')->name('services.index');
+    Route::resource('cars', 'CarController');
+    Route::resource('images', 'ImageController');    
+    Route::resource('contacts', 'ContactsController');
+    Route::resource('pricelist', 'PricelistController');
 });
 

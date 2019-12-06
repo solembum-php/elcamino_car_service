@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ClientPricelistController extends Controller
+class HomeController extends Controller
 {
     /**
      * Show the application dashboard.
@@ -14,6 +14,6 @@ class ClientPricelistController extends Controller
      */
     public function index()
     {
-        return view('client.pricelist.index');
+        return view('client.home.index');
     }
 }

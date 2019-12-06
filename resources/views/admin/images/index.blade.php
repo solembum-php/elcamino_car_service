@@ -8,8 +8,7 @@
                 <div class="panel-heading"><b>{{trans('images.template.all_images')}}</b></div>
 
                 <div class="panel-body">
-		    <!-- Текущие задачи -->
-		    @if (count($images) > 0)
+		    <!-- Текущие задачи --> 
 		    <div class="panel panel-default">
 			<div class="panel-heading">
 			    {{trans('images.template.all_images')}}
@@ -20,6 +19,7 @@
 				{{ method_field('GET') }}
 				<button><i class="fa fa-plus" style="font-size: 24px;color: darkseagreen"></i>{{trans('images.template.create_new_image')}}</button>
 			    </form>
+			    @if (count($images) > 0)
 			    <table class="table table-striped task-table">
 				<!-- Заголовок таблицы -->
 				<thead>
@@ -36,6 +36,9 @@
 					<td class="table-text">
                                             <div><a href="{{route('admin.images.index')}}"><img src="{{ $image->url }}" height="150"/></a></div>
 					</td>
+					<td class="table-text">
+					    {{ $image->car->name }}
+					</td>
 					<td style="display: flex">
 					    <form action="{{route('admin.images.destroy',$image->id)}}" method="post">
 						{{ csrf_field() }}
@@ -43,13 +46,14 @@
 						<button><i class="fa fa-trash" style="font-size: 30px;color: lightsalmon"></i></button>
 					    </form>
 					</td>
+					
 				    </tr>
 				    @endforeach
 				</tbody>
 			    </table>
+			    @endif
 			</div>
 		    </div>
-		    @endif
                 </div>
             </div>
         </div>

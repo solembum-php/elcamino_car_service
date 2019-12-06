@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Image;
 use App\Http\Controllers\Controller;
 
-class ClientImageController extends Controller {
+class ImageController extends Controller {
 
 //     /**
 //     * Создание нового экземпляра контроллера.
