@@ -22,7 +22,8 @@ class ClientImageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-	$images = Image::all();
-	return view('client.images.index', ['images' => $images]);
+        $images = Image::all();
+        //$images = Image::where('user_id', '=', '1')->get();
+        return view('client.images.index', ['images' => $images]);
     }
 }

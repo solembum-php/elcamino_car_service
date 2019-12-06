@@ -29,7 +29,7 @@
 				    <tr>
 					<!-- Имя задачи -->
 					<td class="table-text">
-					    <div><a href="{{route('images.index')}}">{{ $car->name }}</a></div>
+					    <div><a href="{{route('images.indexuser2')}}">{{ $car->name }}</a></div>
 					</td>
 				    </tr>
 				    @endforeach

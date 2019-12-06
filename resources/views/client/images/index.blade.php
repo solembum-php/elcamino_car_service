@@ -24,6 +24,7 @@
                                 </thead>
                                 <!-- Тело таблицы -->
                                 <tbody>
+        
                                     @foreach ($images as $image)
                                     <tr>
                                         <!-- Имя задачи -->
@@ -32,6 +33,7 @@
                                         </td>
                                     </tr>
                                     @endforeach
+
                                 </tbody>
                             </table>
                             <a href="{{ route('home.index') }}"><b>Home</b></a>
