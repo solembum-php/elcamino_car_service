@@ -26,6 +26,7 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
     Route::resource('services', 'ServiceController', [
 	'as' => 'admin',
     ]);
+    Route::redirect('/',route('admin.services.index'));
 });
 
 

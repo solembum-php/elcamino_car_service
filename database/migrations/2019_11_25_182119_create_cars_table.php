@@ -16,12 +16,12 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->increments('id');
 	    $table->string('name');
-	    $table->integer('user_id')
+	    $table->integer('service_id')
 		    ->unsigned()
 		    ->index();
-	    $table->foreign('user_id')
+	    $table->foreign('service_id')
 		    ->references('id')
-		    ->on('users')
+		    ->on('services')
 		    ->onDelete('restrict');
             $table->timestamps();
         });
