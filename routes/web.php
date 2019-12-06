@@ -33,8 +33,8 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
 Route::group(['namespace' => 'Client'], function() {
     Route::get('/', 'HomeController@index')->name('home.index');
     Route::get('services', 'ServiceController@index')->name('services.index');
-    Route::resource('cars', 'CarController');
-    Route::resource('images', 'ImageController');    
+    Route::get('cars', 'CarController@index')->name('cars.index');;
+    Route::get('images', 'ImageController@index')->name('images.index');;    
     Route::resource('contacts', 'ContactsController');
     Route::resource('pricelist', 'PricelistController');
 });
