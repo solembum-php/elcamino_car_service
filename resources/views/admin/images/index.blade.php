@@ -36,15 +36,16 @@
 					<td class="table-text">
                                             <div><a href="{{route('admin.images.index')}}"><img src="{{ $image->url }}" height="150"/></a></div>
 					</td>
-					<td class="table-text">
-					    {{ $image->car->name }}
-					</td>
+					
 					<td style="display: flex">
 					    <form action="{{route('admin.images.destroy',$image->id)}}" method="post">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
 						<button><i class="fa fa-trash" style="font-size: 30px;color: lightsalmon"></i></button>
 					    </form>
+					</td>
+					<td class="table-text">
+					    {{ $image->car->name }}
 					</td>
 					
 				    </tr>

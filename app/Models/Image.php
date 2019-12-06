@@ -12,7 +12,7 @@ class Image extends Model {
      * @var array
      */
     protected $fillable = [
-	'url', 'id',
+	'url', 'id', 'car_id'
     ];
 
     public function car() {

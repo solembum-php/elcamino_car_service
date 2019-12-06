@@ -40,8 +40,7 @@ class ImageController extends Controller {
 	if ($cars->count() == 0) {
 	    return redirect()->route('admin.cars.index');
 	}
-        return view('admin.images.create');
-	return view('admin.images.create', ['services' => $services]);
+	return view('admin.images.create', ['cars' => $cars]);
     }
 
     /**
@@ -59,7 +58,7 @@ class ImageController extends Controller {
 
 	request()->image->move(public_path('images'), $fileName);
 	$url = asset('images/' . $fileName);
-	Image::create(['url'=>$url,'user_id'=>$request->user()->id]);
+	Image::create(['url'=>$url,'car_id'=>$request->car_id]);
 	return redirect(route('admin.images.index'));
     }
     
@@ -71,7 +70,7 @@ class ImageController extends Controller {
      */
     public function destroy(Request $request, Image $image) {
        
-	$this->authorize('destroy', $image);
+	
         $image->delete();
         return redirect(route('admin.images.index'));
     }

@@ -97,7 +97,6 @@ class CarController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, Car $car) {
-	$this->authorize('destroy', $car);
 	$car->delete();
 	return redirect(route('admin.cars.index'));
     }
