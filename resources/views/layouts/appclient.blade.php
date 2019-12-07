@@ -14,9 +14,10 @@
         <style>
             html, body {
                 background-color: #ffff99;
-                color: #636b6f;
+                color: #000;
                 font-family: 'Raleway', sans-serif;
                 font-weight: bold;
+                font-size: 30px;
                 height: 100vh;
                 margin: 0;
             }
@@ -45,7 +46,7 @@
                 text-align: center;
                 background-color: #339966;
                 color: #ffff66;
-                font-size: 30px;
+                font-size: 25px;
             }
 
             .logo{
@@ -83,6 +84,7 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+                font-size: 40px;
             }
         </style>
     </head>
