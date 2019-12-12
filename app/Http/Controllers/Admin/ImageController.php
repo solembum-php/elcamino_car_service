@@ -25,7 +25,6 @@ class ImageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-	//return view('admin.images.index');
 	$images = Image::all();
 	return view('admin.images.index', ['images' => $images]);
     }

@@ -3,19 +3,15 @@
 namespace App\Http\Controllers\Client;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Image;
+use App\Models\Car;
+use App\Models\Service;
 use App\Http\Controllers\Controller;
 
 class ImageController extends Controller {
 
-//     /**
-//     * Создание нового экземпляра контроллера.
-//     *
-//     * @return void
-//     */
-//    public function __construct() {
-//        $this->middleware('auth');
-//    }
+
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +19,7 @@ class ImageController extends Controller {
      */
     public function index() {
         $images = Image::all();
-        //$images = Image::where('user_id', '=', '1')->get();
+        //$images = Image::where('car_id', '=', '1')->get();
         return view('client.images.index', ['images' => $images]);
     }
 }

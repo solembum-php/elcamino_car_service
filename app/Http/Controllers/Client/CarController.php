@@ -18,6 +18,7 @@ class CarController extends Controller
      */
     public function index() {
         $cars = Car::all();
+         //$cars = Car::where('service_id', '=', '1')->get();
         return view('client.cars.index', ['cars' => $cars]);
     }
 }
