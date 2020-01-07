@@ -29,7 +29,7 @@
                                     <tr>
                                         <!-- Имя задачи -->
                                         <td class="table-text">
-                                            <div><a href="{{route('images.index')}}"><img src="{{ $image->url }}"  height="150"/></a></div>
+                                            <div><img src="{{ $image->url }}"  height="150"/></div>
                                         </td>
                                     </tr>
                                     @endforeach
